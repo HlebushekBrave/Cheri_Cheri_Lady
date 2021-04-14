@@ -32,7 +32,7 @@ def icefrackal(n, size): #Ледяной фрактал
         icefrackal2(n-1, size/2)
 
 
-def branch(n, size):
+def branch(n, size): #Грибанная ветка
     if n == 0:
         t.left(180)
         return
