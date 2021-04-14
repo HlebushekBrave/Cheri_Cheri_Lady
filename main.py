@@ -51,6 +51,19 @@ def branch(n, size): #Грибанная ветка
     t.forward(size)
 
 
+def koch(n, size):
+    if n == 0:
+        forward(size)
+    else:
+        koch(n-1, size/3)
+        left(60)
+        koch(n-1, size/3)
+        right(120)
+        koch(n-1, size/3)
+        left(60)
+        koch(n-1, size/3)
+
+        
 def main():
     t.up()
     t.goto(-100, 0)
