@@ -1,49 +1,49 @@
-#Мы долбанемся с этой прогой
+# Мы долбанемся с этой прогой
 import turtle as t
 
 
-def icefrackal(n, size): #Ледяной фрактал
+def icefrackal(n, size):  # Ледяной фрактал
     if n == 0:
         t.forward(size)
     else:
-        icefrackal(n-1, size/2)
+        icefrackal(n - 1, size / 2)
         t.left(90)
-        icefrackal(n-1, size/4)
+        icefrackal(n - 1, size / 4)
         t.right(180)
-        icefrackal(n-1, size/4)
+        icefrackal(n - 1, size / 4)
         t.left(90)
-        icefrackal(n-1, size/2)
+        icefrackal(n - 1, size / 2)
 
-        
- def icefrackal2(n, size): #Ледяной фрактал 2
+
+def icefrackal2(n, size):  # Ледяной фрактал 2
     if n == 0:
         t.forward(size)
     else:
-        icefrackal2(n-1, size/2)
+        icefrackal2(n - 1, size / 2)
         t.left(120)
-        icefrackal2(n-1, size/4)
+        icefrackal2(n - 1, size / 4)
         t.right(180)
-        icefrackal2(n-1, size/4)
+        icefrackal2(n - 1, size / 4)
         t.left(120)
-        icefrackal2(n-1, size/4)
+        icefrackal2(n - 1, size / 4)
         t.right(180)
-        icefrackal2(n-1,size/4)
+        icefrackal2(n - 1, size / 4)
         t.left(120)
-        icefrackal2(n-1, size/2)
+        icefrackal2(n - 1, size / 2)
 
 
-def branch(n, size): #Грибанная ветка
+def branch(n, size):  # Грибанная ветка, не забудь повернуть
     if n == 0:
         t.left(180)
         return
 
-    x = size/(n+1)
+    x = size / (n + 1)
     for i in range(n):
         t.forward(x)
         t.left(45)
-        branch(n-i-1, 0.5*x*(n-i-1))
+        branch(n - i - 1, 0.5 * x * (n - i - 1))
         t.left(90)
-        branch(n-i-1, 0.5*x*(n-i-1))
+        branch(n - i - 1, 0.5 * x * (n - i - 1))
         t.right(135)
 
     t.forward(x)
@@ -53,24 +53,24 @@ def branch(n, size): #Грибанная ветка
 
 def koch(n, size):
     if n == 0:
-        forward(size)
+        t.forward(size)
     else:
-        koch(n-1, size/3)
-        left(60)
-        koch(n-1, size/3)
-        right(120)
-        koch(n-1, size/3)
-        left(60)
-        koch(n-1, size/3)
+        koch(n - 1, size / 3)
+        t.left(60)
+        koch(n - 1, size / 3)
+        t.right(120)
+        koch(n - 1, size / 3)
+        t.left(60)
+        koch(n - 1, size / 3)
 
-        
+
 def main():
     t.up()
     t.goto(-100, 0)
     t.down()
     n = int(input('Глубина рекурсии:'))
     size = int(input('Длина стороны:'))
-    icefrackal(n, size)
+    koch(n, size)
 
 
 main()
