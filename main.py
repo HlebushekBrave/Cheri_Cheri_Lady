@@ -51,7 +51,7 @@ def branch(n, size):  # Грибанная ветка, не забудь пов�
     t.forward(size)
 
 
-def koch(n, size):
+def koch(n, size): #Кривая Коха
     if n == 0:
         t.forward(size)
     else:
