@@ -91,8 +91,31 @@ def cycle():
     for i in range(3):
         snowlake(size, n)
         t.right(120)
-
-
+      
+     
+def minkovsky(n, size): #Кривая Минковского
+    if n==0:
+        t.forward(size)
+    else:
+        minkovsky(n-1, size/4)
+        t.left(90)
+        minkovsky(n-1, size/4)
+        t.right(90)
+        minkovsky(n-1, size/4)
+        t.right(90)
+        minkovsky(n-1, size/2)
+        t.left(90)
+        minkovsky(n-1, size/4)
+        t.left(90)
+        minkovsky(n - 1, size / 4)
+        t.right(90)
+        minkovsky(n-1, size/4)
+def cycle_min():
+    minkovsky(n, size)
+    t.right(90)
+    
+   
+    
 def choice(funct): #цифра - фрактал
     if funct==1:
         return icefrackal(n, size)
@@ -105,8 +128,9 @@ def choice(funct): #цифра - фрактал
     elif funct == 5:
         return square(size)
     elif funct == 6:
-        cycle()
-    #elif funct == 7:
+        retrn cycle()
+    elif funct == 7:
+        return cycle_min()
     #elif funct == 8:
     #elif funct == 9:
 
