@@ -64,15 +64,28 @@ def koch(n, size): #Кривая Коха
         koch(n - 1, size / 3)
 
 
-def main():
-    t.up()
-    t.goto(-100, 0)
-    t.down()
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
-    koch(n, size)
+def choice(funct):
+    if funct==1:
+        return icefrackal(n, size)
+    elif funct==2:
+        return icefrackal2(n, size)
+    elif funct == 3:
+        return branch(n, size)
+    elif funct == 4:
+        return koch(n, size)
+    #elif funct == 5:
+    #elif funct == 6:
+    #elif funct == 7:
+    #elif funct == 8:
+    #elif funct == 9:
 
 
-main()
+funct=input('Выберите номер фрактала, который нужно нарисовать: \n 1) ледяной фрактал \n 2) ледяной фрактал 2 \n 3) ветка \n 4) кривая Коха \n 5) кривая Коха 2 \n 6) снежинка Коха \n 7) кривая Минковского \n 8) кривая Леви \n 9) фрактал Дракон Хартера-Хейтуэя   ')
+t.up()
+t.goto(-100, 0)
+t.down()
+n = int(input('Глубина рекурсии:'))
+size = int(input('Длина стороны:'))
+choice(funct)
 t.speed(100)
 t.mainloop()
