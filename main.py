@@ -113,6 +113,7 @@ def minkovsky(n, size): #Кривая Минковского
         minkovsky(n - 1, size / 4)
         t.right(90)
         minkovsky(n-1, size/4)
+    return
 def cycle_min():
     minkovsky(n, size)
     t.right(90)
