@@ -64,21 +64,24 @@ def koch(n, size): #Кривая Коха
         koch(n - 1, size / 3)
 
 
-def snowlake(size, n): #Снежинка Коха
+def snowlake(n, size): #Снежинка Коха
     if n == 0:
         t.forward(size)
     else:
-        snowlake(size / 3, n - 1)
+        snowlake(n - 1, size / 3)
         t.left(60)
-        snowlake(size / 3, n - 1)
+        snowlake(n - 1, size / 3)
         t.right(120)
-        snowlake(size / 3, n - 1)
+        snowlake(n - 1, size / 3)
         t.left(60)
-        snowlake(size / 3, n - 1)
+        snowlake(n - 1, size / 3)
 def cycle():
     for i in range(3):
         snowlake(size, n)
         t.right(120)
+        
+        
+        
 def choice(funct): #цифра - фрактал
     if funct==1:
         return icefrackal(n, size)
