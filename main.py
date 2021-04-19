@@ -64,24 +64,35 @@ def koch(n, size): #Кривая Коха
         koch(n - 1, size / 3)
 
 
-def snowlake(n, size): #Снежинка Коха
+def square(size): #бесконечный квадрат
+    if size<0:
+        return
+    for i in range(4):
+        t.forward(size)
+        t.left(90)
+    t.left(10)
+    t.penup()
+    t.forward(int(size//10))
+    t.pendown()
+    square(0.9*size)
+
+def snowlake(size, n): #Снежинка Коха
     if n == 0:
         t.forward(size)
     else:
-        snowlake(n - 1, size / 3)
+        snowlake(size / 3, n - 1)
         t.left(60)
-        snowlake(n - 1, size / 3)
+        snowlake(size / 3, n - 1)
         t.right(120)
-        snowlake(n - 1, size / 3)
+        snowlake(size / 3, n - 1)
         t.left(60)
-        snowlake(n - 1, size / 3)
+        snowlake(size / 3, n - 1)
 def cycle():
     for i in range(3):
         snowlake(size, n)
         t.right(120)
-        
-        
-        
+
+
 def choice(funct): #цифра - фрактал
     if funct==1:
         return icefrackal(n, size)
@@ -91,15 +102,16 @@ def choice(funct): #цифра - фрактал
         return branch(n, size)
     elif funct == 4:
         return koch(n, size)
-    #elif funct == 5:
+    elif funct == 5:
+        return square(size)
     elif funct == 6:
-        return cycle()
+        cycle()
     #elif funct == 7:
     #elif funct == 8:
     #elif funct == 9:
 
 
-funct=input('Выберите номер фрактала, который нужно нарисовать: \n 1) ледяной фрактал \n 2) ледяной фрактал 2 \n 3) ветка \n 4) кривая Коха \n 5) кривая Коха 2 \n 6) снежинка Коха \n 7) кривая Минковского \n 8) кривая Леви \n 9) фрактал Дракон Хартера-Хейтуэя   ')
+funct=input('Выберите номер фрактала, который нужно нарисовать: \n 1) ледяной фрактал \n 2) ледяной фрактал 2 \n 3) ветка \n 4) кривая Коха \n 5) бесконечный квадрат \n 6) снежинка Коха \n 7) кривая Минковского \n 8) кривая Леви \n 9) фрактал Дракон Хартера-Хейтуэя   ')
 t.up()
 t.goto(-100, 0)
 t.down()
