@@ -119,6 +119,17 @@ def cycle_min():
     
    
     
+def levi(n, size): #Кривая Леви
+    if n==0:
+        t.forward(size)
+    else:
+        t.left(45)
+        levi(n-1, size/2)
+        t.right(90)
+        levi(n-1, size/2)
+        t.left(45)
+
+
 def choice(funct): #цифра - фрактал
     if funct==1:
         return icefrackal(n, size)
@@ -131,10 +142,11 @@ def choice(funct): #цифра - фрактал
     elif funct == 5:
         return square(size)
     elif funct == 6:
-        retrn cycle()
+        return cycle()
     elif funct == 7:
         return cycle_min()
-    #elif funct == 8:
+    elif funct == 8:
+        return levi(n, size)
     #elif funct == 9:
 
 
