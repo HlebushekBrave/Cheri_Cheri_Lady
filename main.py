@@ -1,4 +1,7 @@
-# Мы долбанемся с этой прогой
+#Case-study 8
+#Raspopova Alexandra (50%)
+#Adristi Fauzi (30%)
+#Belozertseva Maria (40%)
 import turtle as t
 
 
