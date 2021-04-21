@@ -18,7 +18,7 @@ def icefrackal(n, size):  # Ледяной фрактал
         icefrackal(n - 1, size / 2)
 
 
-def icefrackal2(n, size):  # Ледяной фрактал 2
+def icefrackal2(n, size):  # Ледяной фрактал версия 2
     if n == 0:
         t.forward(size)
     else:
@@ -35,7 +35,7 @@ def icefrackal2(n, size):  # Ледяной фрактал 2
         icefrackal2(n - 1, size / 2)
 
 
-def branch(n, size):  # Ветка, не забудь повернуть
+def branch(n, size):  # Ветка
     if n == 0:
         t.left(180)
         return
@@ -65,7 +65,7 @@ def koch(n, size):  # Кривая Коха
         koch(n - 1, size / 3)
 
 
-def square(size):  # бесконечный квадрат
+def square(size):  # Бесконечный квадрат
     if size < 0:
         return
     for i in range(4):
@@ -133,7 +133,7 @@ def levi(n, size):  # Кривая Леви
         t.left(45)
 
 
-def choice(funct):  # цифра - фрактал
+def choice(funct):  # Цифра - фрактал
     if funct == 1:
         return icefrackal(n, size)
     elif funct == 2:
