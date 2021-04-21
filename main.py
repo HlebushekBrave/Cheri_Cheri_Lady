@@ -1,7 +1,7 @@
 # Case-study 8
 # Raspopova Alexandra (55%)
 # Adristi Fauzi (30%)
-# Belozertseva Maria (40%)
+# Belozertseva Maria (50%)
 import turtle as t
 
 
