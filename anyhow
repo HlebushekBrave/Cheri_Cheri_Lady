@@ -1,0 +1,20 @@
+#Binary Tree
+
+import turtle as t
+t.left(90)
+t.speed(100)
+def tree(h, a):
+    if h<30:
+        return
+    else:
+        t.forward(h)
+        t.right(a/2)
+        tree(3*h/4, a)
+        t.left(a)
+        tree(3*h/4, a)
+        t.right(a/2)
+        t.backward(h)
+
+tree(100,60)
+t.done()
+
