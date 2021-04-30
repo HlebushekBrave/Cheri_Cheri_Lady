@@ -1,5 +1,5 @@
 # Case-study 8
-# Raspopova Alexandra (55%)
+# Raspopova Alexandra (57%)
 # Adristi Fauzi (30%)
 # Belozertseva Maria (50%)
 import turtle as t
@@ -133,6 +133,19 @@ def levi(n, size):  # Кривая Леви
         t.left(45)
 
 
+def tree(h, a):
+    if h < 30:
+        return
+    else:
+        t.forward(h)
+        t.right(a/2)
+        tree(3*h/4, a)
+        t.left(a)
+        tree(3*h/4, a)
+        t.right(a/2)
+        t.backward(h)
+
+
 def choice(funct):  # Цифра - фрактал
     if funct == 1:
         return icefrackal(n, size)
@@ -153,7 +166,11 @@ def choice(funct):  # Цифра - фрактал
     elif funct == 8:
         return levi(n, size)
     # elif funct == 9:
-    # elif funct == 10:
+    elif funct == 10:
+        t.left(90)
+        h = size
+        a = int(input("Введите величину угла: "))
+        tree(h, a)
 
 
 funct = int(input('Выберите номер фрактала, который нужно нарисовать \n1) Ледяной фрактал \n2) Ледяной фрактал 2 \n3) '
