@@ -1,7 +1,7 @@
 # Case-study 8
-# Raspopova Alexandra (57%)
+# Raspopova Alexandra (60%)
 # Adristi Fauzi (30%)
-# Belozertseva Maria (50%)
+# Belozertseva Maria (40%)
 import turtle as t
 
 
@@ -133,7 +133,7 @@ def levi(n, size):  # Кривая Леви
         t.left(45)
 
 
-def tree(h, a):
+def tree(h, a): # Бинарное дерево
     if h < 30:
         return
     else:
@@ -146,7 +146,7 @@ def tree(h, a):
         t.backward(h)
 
        
-def dragon_r(n, size):
+def dragon_r(n, size): # Фрактал Дракон Хартера-Хейтуэя
     if n == 0:
         t.forward(size/2)
     else:
