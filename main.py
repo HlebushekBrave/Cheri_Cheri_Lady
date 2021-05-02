@@ -145,7 +145,25 @@ def tree(h, a):
         t.right(a/2)
         t.backward(h)
 
+       
+def dragon_r(n, size):
+    if n == 0:
+        t.forward(size/2)
+    else:
+        dragon_sec(n - 1, size)
+        t.right(90)
+        dragon_r(n - 1, size)
 
+
+def dragon_sec(n, size):
+    if n == 0:
+        t.forward(size/2)
+    else:
+        dragon_sec(n - 1, size)
+        t.left(90)
+        dragon_r(n - 1, size)
+
+        
 def choice(funct):  # Цифра - фрактал
     if funct == 1:
         return icefrackal(n, size)
@@ -165,7 +183,8 @@ def choice(funct):  # Цифра - фрактал
         return cycle_min()
     elif funct == 8:
         return levi(n, size)
-    # elif funct == 9:
+    elif funct == 9:
+        def dragon_r(n, size)
     elif funct == 10:
         t.left(90)
         h = size
